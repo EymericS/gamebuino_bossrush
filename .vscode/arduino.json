@@ -1,0 +1,4 @@
+{
+    "board": "gamebuino:samd:gamebuino_meta_native",
+    "sketch": "bossrush.ino"
+}
