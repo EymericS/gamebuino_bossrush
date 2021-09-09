@@ -3,7 +3,7 @@
 
 #include <Gamebuino-Meta.h>
 
-#include "Constants.h"
+#include "GLOBALS.h"
 
 struct Timer {
   uint32_t timeInMilliseconds;
@@ -13,5 +13,12 @@ struct Timer {
 };
 
 void createTimer(Timer &aTimer);
+void resetTimer(Timer &aTimer);
+void incrementTime(Timer &aTimer);
+void pauseForTimer(Timer &aTimer);
+void computeTime(Timer &aTimer);
+void runTimer(Timer &aTimer);
 
+void paintTimer(const uint16_t * aTime);
+void paint(const uint16_t * aTime);
 #endif

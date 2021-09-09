@@ -10,6 +10,7 @@ class StateGameOver : public State {
     private:
     
     bool m_isDisplayed;
+	//bool isEndOfGame(const Object &aDoor);
     int m_frameCount;
     StateStatus m_status;
     

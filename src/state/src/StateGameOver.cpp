@@ -16,6 +16,10 @@ StateGameOver::~StateGameOver() {
 // Setters
 
 // Methods
+//bool isEndOfGame(const Object &aDoor) {
+ // return (isBossDead.state == BOSS_DEAD);
+//}
+
 
 StateStatus StateGameOver::loop() {
     m_status = StateStatus::CONTINUE;
