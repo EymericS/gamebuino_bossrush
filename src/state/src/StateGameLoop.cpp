@@ -2,6 +2,7 @@
 
 StateGameLoop::StateGameLoop() {
     m_status = StateStatus::START;
+    m_player = Player();
 }
 
 
@@ -18,9 +19,11 @@ StateGameLoop::~StateGameLoop() {
 StateStatus StateGameLoop::loop() {
     m_status = StateStatus::CONTINUE;
 
+    handleInput();
+
     gb.display.clear();
     
-    String text = "Welcome in gamme loop";
+    String text = "Welcome in game";
     uint16_t textWidth, textHeight;
 
     gb.display.setFont( font3x5 );
@@ -31,7 +34,7 @@ StateStatus StateGameLoop::loop() {
     gb.display.cursorY = gb.display.height() / 2 - textHeight / 2;
     gb.display.print(text);
 
-    handleInput();
+    m_player.loop();
 
     return m_status;
 }
@@ -39,5 +42,20 @@ StateStatus StateGameLoop::loop() {
 void StateGameLoop::handleInput() {
     if(gb.buttons.pressed(BUTTON_A)) {
         m_status = StateStatus::NEXT;
+    }
+    if(gb.buttons.pressed(BUTTON_B)) {
+
+    }
+    if(gb.buttons.pressed(BUTTON_UP)) {
+        
+    }
+    if(gb.buttons.pressed(BUTTON_DOWN)) {
+
+    }
+    if(gb.buttons.pressed(BUTTON_RIGHT)) {
+        m_player.handle_input(Player::Input::RIGHT);
+    }
+    if(gb.buttons.pressed(BUTTON_LEFT)) {
+        m_player.handle_input(Player::Input::LEFT);
     }
 }

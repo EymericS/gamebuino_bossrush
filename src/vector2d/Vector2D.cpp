@@ -10,6 +10,10 @@ Vector2D::Vector2D(int _axisX, int _axisY)
 
 }
 
+Vector2D::~Vector2D() {
+
+}
+
 // Getters
 
 int Vector2D::axisX() {

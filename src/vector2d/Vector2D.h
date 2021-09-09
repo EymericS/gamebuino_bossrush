@@ -1,4 +1,3 @@
-
 #ifndef DEF_VECTOR2D
 #define DEF_VECTOR2D
 
