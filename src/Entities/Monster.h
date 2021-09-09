@@ -7,13 +7,13 @@ class Monster : public Entity {
 
     private:
     void compute_movement();
-        
+    void draw();
     protected:
-
+    
     public:
 
     Monster();
-    void loop();
+    virtual void loop() = 0;
 };
 
 #endif
