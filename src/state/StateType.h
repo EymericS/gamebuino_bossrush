@@ -3,7 +3,8 @@
 
 enum class StateType {
     START_MENU,
-    GAME_OVER
+    GAME_OVER,
+    GAME_LOOP
 };
 
 #endif

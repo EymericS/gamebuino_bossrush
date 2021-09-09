@@ -3,6 +3,7 @@
 StateRouter::StateRouter() {
     m_currentState = StateType::START_MENU;
     m_startMenu = new StateStartMenu();
+    m_gameLoop = new StateGameLoop();
     m_gameOver = new StateGameOver();
 }
 
@@ -25,16 +26,22 @@ void StateRouter::loop() {
     switch (getCurrentState()) {
         case StateType::START_MENU:
             if(m_startMenu->loop() == StateStatus::NEXT) {
-                m_currentState = StateType::GAME_OVER;
+                m_currentState = StateType::GAME_LOOP;
             }
             break;
 
+        case StateType::GAME_LOOP:
+            if(m_gameLoop->loop() == StateStatus::NEXT) {
+                m_currentState = StateType::GAME_OVER;
+            }
+            break;
+    
         case StateType::GAME_OVER:
             if(m_gameOver->loop() == StateStatus::NEXT) {
                 m_currentState = StateType::START_MENU;
             }
             break;
-    
+
         default:
             break;
     }
