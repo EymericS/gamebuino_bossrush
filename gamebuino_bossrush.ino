@@ -1,5 +1,6 @@
 #include "src/GLOBALS.h"
 #include "src/state/StateRouter.h"
+#include "src/Timer.h"
 
 StateRouter stateRouter;
 
