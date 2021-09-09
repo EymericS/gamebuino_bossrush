@@ -6,8 +6,7 @@
 class Monster : public Entity {
 
     private:
-    void compute_movement();
-    void draw();
+
     protected:
     
     public:

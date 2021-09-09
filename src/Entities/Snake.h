@@ -4,7 +4,6 @@
 #include "Monster.h"
 
 
-
 class Snake : public Monster{
 
     private:
@@ -12,6 +11,9 @@ class Snake : public Monster{
     
 
     protected : 
+
+    void compute_movement();
+    void draw();
 
     public:
     

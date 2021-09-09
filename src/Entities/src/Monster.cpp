@@ -1,6 +1,6 @@
 #include "../Monster.h"
 
-Monster::Monster() : Entity(100) {
+Monster::Monster() : Entity() {
     
 }
 

@@ -1,19 +1,22 @@
 #include "../Snake.h"
 
 Snake::Snake() : Monster(), direction(true) {
-    //Direction true => left, false => right
+    //Direction true => right, false =>  left
 }
 
 void Snake::compute_movement(){
     if (direction){
-        if (gb.display.width <= m_position.axisX()+VELOCITY){
+        int positionX = m_position.axisX();
+        if (gb.display.width() >= positionX + 4 + 1){
             m_position.axisX(m_position.axisX()+VELOCITY);
         }
+        else direction = !direction;
     }
     else{
-        if (0 >=  m_position.axisX()-VELOCITY){
+        if (0 <=  m_position.axisX()-VELOCITY){
             m_position.axisX(m_position.axisX()-VELOCITY);
         }
+        else direction = !direction;
     }
 }
 
