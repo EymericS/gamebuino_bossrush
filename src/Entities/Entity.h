@@ -1,8 +1,8 @@
 #ifndef DEF_ENTITY
 #define DEF_ENTITY
 
-#include "../vector2d/Vector2D.h"
 #include "../GLOBALS.h"
+#include "../vector2d/Vector2D.h"
 
 class Entity {
     private:

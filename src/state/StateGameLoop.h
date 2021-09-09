@@ -5,12 +5,14 @@
 #include "State.h"
 #include "../vector2d/Vector2D.h"
 #include "StateStatus.h"
+#include "../Entities/Player.h"
 
 class StateGameLoop : public State {
     private:
     
     int m_frameCount;
     StateStatus m_status;
+    Player m_player;
     
     public:
 
