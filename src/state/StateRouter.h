@@ -4,6 +4,7 @@
 #include "State.h"
 #include "StateStartMenu.h"
 #include "StateGameOver.h"
+#include "StateGameLoop.h"
 #include "StateType.h"
 #include "StateStatus.h"
 
@@ -12,6 +13,7 @@ class StateRouter {
 
     StateType m_currentState;
     StateStartMenu* m_startMenu;
+    StateGameLoop* m_gameLoop;
     StateGameOver* m_gameOver;
 
     public:
