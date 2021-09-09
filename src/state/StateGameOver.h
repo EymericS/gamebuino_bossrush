@@ -5,12 +5,12 @@
 #include "State.h"
 #include "../vector2d/Vector2D.h"
 #include "StateStatus.h"
+#include "../Timer.h"
 
 class StateGameOver : public State {
     private:
     
     bool m_isDisplayed;
-	//bool isEndOfGame(const Object &aDoor);
     int m_frameCount;
     StateStatus m_status;
     

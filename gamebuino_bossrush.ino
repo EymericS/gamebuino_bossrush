@@ -11,17 +11,25 @@ void setup() {
     
     stateRouter = StateRouter();
     createTimer(myTimer);
-    
     resetTimer(myTimer);
 }
 
 void loop() {
     while(!gb.update());
     stateRouter.loop();
-    
     myTimer.activateTimer = true;
-    runTimer(myTimer);
-    paint(myTimer.valueOfTime);
+    StateType stateType= stateRouter.getCurrentState();
+    
+      if(stateType==StateType::GAME_LOOP) {
+         runTimer(myTimer);
+         paint(myTimer.valueOfTime);
+      }
+      else if(stateType==StateType::GAME_OVER) {
+         resetTimer(myTimer);  
+      }
+      else{
+    
+      } 
 }
 
 /*
