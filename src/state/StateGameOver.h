@@ -5,6 +5,7 @@
 #include "State.h"
 #include "../vector2d/Vector2D.h"
 #include "StateStatus.h"
+#include "../Timer.h"
 
 class StateGameOver : public State {
     private:

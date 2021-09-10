@@ -1,18 +1,35 @@
 #include "src/GLOBALS.h"
 #include "src/state/StateRouter.h"
+#include "src/Timer.h"
 
 StateRouter stateRouter;
-
+Timer myTimer;
+Timer aTimer;
+    
 void setup() {
     gb.begin();
     
     stateRouter = StateRouter();
-
+    createTimer(myTimer);
+    resetTimer(myTimer);
 }
 
 void loop() {
     while(!gb.update());
     stateRouter.loop();
+    myTimer.activateTimer = true;
+    StateType stateType= stateRouter.getCurrentState();
+    
+      if(stateType==StateType::GAME_LOOP) {
+         runTimer(myTimer);
+         paint(myTimer.valueOfTime);
+      }
+      else if(stateType==StateType::GAME_OVER) {
+         resetTimer(myTimer);  
+      }
+      else{
+    
+      } 
 }
 
 /*

@@ -1,5 +1,6 @@
 #include "../StateGameOver.h"
 
+
 StateGameOver::StateGameOver() {
     m_isDisplayed = true;
     m_frameCount = 0;
@@ -17,10 +18,11 @@ StateGameOver::~StateGameOver() {
 
 // Methods
 
+
+
 StateStatus StateGameOver::loop() {
     m_status = StateStatus::CONTINUE;
     m_frameCount += 1;;
-
     gb.display.clear();
     gb.display.setFont( font3x5 );
     gb.display.setColor(WHITE);
