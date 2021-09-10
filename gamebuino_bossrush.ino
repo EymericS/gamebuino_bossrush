@@ -3,17 +3,25 @@
 #include "src/Timer.h"
 
 StateRouter stateRouter;
-
+Timer myTimer;
+Timer aTimer;
+    
 void setup() {
     gb.begin();
     
     stateRouter = StateRouter();
-
+    createTimer(myTimer);
+    
+    resetTimer(myTimer);
 }
 
 void loop() {
     while(!gb.update());
     stateRouter.loop();
+    
+    myTimer.activateTimer = true;
+    runTimer(myTimer);
+    paint(myTimer.valueOfTime);
 }
 
 /*
