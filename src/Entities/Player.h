@@ -3,7 +3,6 @@
 
 #include "Entity.h"
 
-const int VELOCITY = 1;
 
 class Player : public Entity {
 

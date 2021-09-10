@@ -3,6 +3,7 @@
 StateGameLoop::StateGameLoop() {
     m_status = StateStatus::START;
     m_player = Player();
+    m_snake = Snake();
 }
 
 
@@ -35,6 +36,7 @@ StateStatus StateGameLoop::loop() {
     gb.display.print(text);
 
     m_player.loop();
+    m_snake.loop();
 
     return m_status;
 }

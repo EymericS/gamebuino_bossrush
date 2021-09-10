@@ -6,6 +6,7 @@
 #include "../vector2d/Vector2D.h"
 #include "StateStatus.h"
 #include "../Entities/Player.h"
+#include "../Entities/Snake.h"
 
 class StateGameLoop : public State {
     private:
@@ -13,6 +14,7 @@ class StateGameLoop : public State {
     int m_frameCount;
     StateStatus m_status;
     Player m_player;
+    Snake m_snake;
     
     public:
 
